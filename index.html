@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — TV Schedule</title>
+<meta name="description" content="How the TV Schedule app handles information. No accounts, no analytics, no location.">
+<meta name="theme-color" content="#150F2A">
+<style>
+  :root {
+    --bg:       #0E0A1C;
+    --panel:    #150F2A;
+    --panel-2:  #1C1440;
+    --acc:      #7C4DFF;
+    --acc2:     #A855F7;
+    --text:     #F3F1FB;
+    --muted:    #9A93C0;
+    --line:     rgba(255,255,255,.09);
+    --glass:    rgba(255,255,255,.045);
+    --radius:   18px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--bg);
+    color: var(--muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; }
+
+  /* ---- header ---- */
+
+  .top {
+    position: relative;
+    margin: 0 -20px 34px;
+    padding: 64px 20px 40px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(120% 100% at 12% 0%, rgba(124,77,255,.34), transparent 62%),
+      radial-gradient(90% 90% at 88% 8%, rgba(168,85,247,.24), transparent 60%),
+      linear-gradient(180deg, var(--panel-2), var(--panel));
+  }
+  .top .wrap { position: relative; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 6px 12px 6px 8px;
+    border: 1px solid rgba(168,85,247,.24);
+    border-radius: 999px;
+    background: rgba(168,85,247,.1);
+    color: var(--acc2);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .01em;
+  }
+  .eyebrow .mark {
+    display: grid;
+    place-items: center;
+    width: 22px; height: 22px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--acc), var(--acc2));
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(30px, 7.5vw, 42px);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+  }
+
+  .updated {
+    margin: 14px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    opacity: .8;
+  }
+
+  .lede {
+    margin: 22px 0 0;
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: .92;
+  }
+
+  /* ---- sections ----
+     Each heading carries a channel ident, the same rounded letter badge the
+     app draws when a channel has no logo. It is the one decorative device
+     on the page, so nothing else competes with it. */
+
+  section { margin-top: 40px; }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 14px;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+  }
+
+  .ident {
+    flex: 0 0 34px;
+    display: grid;
+    place-items: center;
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,.35);
+  }
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  .card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--glass);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 7px 0; }
+  li::marker { color: var(--acc2); }
+
+  strong { color: var(--text); font-weight: 650; }
+
+  a {
+    color: var(--acc2);
+    text-decoration-color: rgba(168,85,247,.4);
+    text-underline-offset: 3px;
+  }
+  a:hover { text-decoration-color: var(--acc2); }
+  a:focus-visible {
+    outline: 2px solid var(--acc2);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ---- data table ---- */
+
+  .tablewrap {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--glass);
+    overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 13px 16px; text-align: left; vertical-align: top; }
+  thead th {
+    background: rgba(124,77,255,.11);
+    color: var(--text);
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+  }
+  tbody tr + tr { border-top: 1px solid var(--line); }
+  tbody th { color: var(--text); font-weight: 650; white-space: nowrap; }
+
+  @media (max-width: 560px) {
+    thead { display: none; }
+    tbody tr { display: block; padding: 6px 0; }
+    tbody tr + tr { border-top: 1px solid var(--line); }
+    tbody th, tbody td { display: block; padding: 5px 16px; white-space: normal; }
+    tbody th { padding-top: 12px; font-size: 15px; }
+    tbody td::before {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--acc2);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      content: attr(data-label);
+    }
+    tbody td:last-child { padding-bottom: 12px; }
+  }
+
+  /* ---- footer ---- */
+
+  footer {
+    margin-top: 52px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+  }
+  footer p { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="eyebrow"><span class="mark">TV</span> TV Schedule</span>
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated 03/08/2026</p>
+    <p class="lede">TV Schedule is a television programme guide. It lists broadcast
+      schedules and does not stream, host or link to any video.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <p>The short version: there are no accounts and no sign-in. The app never asks
+      for your name, email address or location, and nothing you do inside it is
+      sent to us. This page explains the rest in full.</p>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#1B4ED8">DEV</span> What stays on your device</h2>
+    <div class="card">
+      <p>These are saved on your phone and are never transmitted anywhere:</p>
+      <ul>
+        <li>Your selected country or region</li>
+        <li>Your time format, 12- or 24-hour</li>
+        <li>Your favourite channels and programmes</li>
+        <li>Reminders you have set for programmes</li>
+        <li>A temporary copy of guide data and app settings, so the app opens
+            quickly and still works when you are offline</li>
+      </ul>
+      <p style="margin-top:14px">Clearing the app’s storage in your device
+        settings erases all of it. So does uninstalling.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#C9236B">NET</span> What other companies receive</h2>
+    <p>The app connects to outside services to work. Any internet connection
+      reveals your device’s IP address and basic technical details of the request,
+      and these are no exception.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Why the app uses it</th><th>What it receives</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Programme guide providers</th>
+            <td data-label="Why the app uses it">Downloads broadcast schedules and channel logos</td>
+            <td data-label="What it receives">IP address, time of request, device and browser type</td>
+          </tr>
+          <tr>
+            <th scope="row">Google Firebase</th>
+            <td data-label="Why the app uses it">Fetches the app’s configuration, such as which countries are available</td>
+            <td data-label="What it receives">IP address, time of request</td>
+          </tr>
+          <tr>
+            <th scope="row">Google AdMob</th>
+            <td data-label="Why the app uses it">Shows the advertising that funds the app</td>
+            <td data-label="What it receives">Advertising ID, device information, approximate location inferred from IP, and ad interactions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px">Google handles that data under its own terms. See
+      <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a>
+      and the <a href="https://policies.google.com/privacy">Google privacy policy</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#E8760F">ADS</span> Advertising</h2>
+    <div class="card">
+      <p>The app shows banner advertising supplied by Google AdMob. Ads may be
+        personalised using your Advertising ID.</p>
+      <p>You can reset or delete that ID, and turn off ad personalisation for
+        every app at once, under <strong>Settings → Privacy → Ads</strong> on your
+        Android device.</p>
+      <p>In the European Economic Area, the United Kingdom and Switzerland, the
+        app asks for your consent before showing personalised ads, and you can
+        change that choice later from inside the app.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#0F7B6C">PRM</span> Permissions</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Internet access</strong> — needed to download schedules and
+            show ads.</li>
+        <li><strong>Notifications</strong> — optional, and only used for reminders
+            you set yourself. Reminders are created on your device and nothing is
+            sent to a server. Decline it and everything else still works.</li>
+        <li><strong>Advertising ID</strong> — used by AdMob, as described above.</li>
+      </ul>
+      <p style="margin-top:14px">The app does not ask for your location, contacts,
+        camera, microphone, photos, files or call history.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#5B4DB1">AGE</span> Children</h2>
+    <p>The app is not directed at children and we do not knowingly collect
+      information from anyone. Listings are supplied by third-party guide providers
+      and describe general broadcast television.</p>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#B80000">DEL</span> Keeping and deleting data</h2>
+    <p>Everything is stored locally and there are no accounts, so there is no
+      record of yours for us to keep or delete. Removing the app removes
+      everything it saved. To clear advertising data held by Google, use the
+      Android advertising controls linked above.</p>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#2554A3">EPG</span> Programme information</h2>
+    <p>Schedules and channel logos come from third-party programme guide sources.
+      Channel names and logos are trademarks of their respective broadcasters and
+      appear only to identify a channel within the guide. TV Schedule is not
+      affiliated with, endorsed by or sponsored by any broadcaster.</p>
+  </section>
+
+  <section>
+    <h2><span class="ident" style="background:#7A2E8D">UPD</span> Changes to this policy</h2>
+    <p>Any update is published at this address with a new date at the top of the
+      page.</p>
+  </section>
+
+  <footer>
+    <p>Questions about this policy: <a href="mailto:jeptreply@gmail.com"> TV Schedule suport</a></p>
+    <p>TV Schedule is published by MAR Dev.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
